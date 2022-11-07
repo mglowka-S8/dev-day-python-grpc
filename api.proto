@@ -1,0 +1,19 @@
+syntax = "proto3";
+package api;
+
+service ApiService {
+  rpc get_config (ConfigGetRequest) returns (ConfigGetResponse) {}
+}
+
+message ConfigGetRequest {
+  string tmp = 1;
+}
+
+message ConfigGetResponse {
+  repeated ConfigEntry entry = 1;
+}
+
+message ConfigEntry {
+  string key = 1;
+  string value = 2;
+}
